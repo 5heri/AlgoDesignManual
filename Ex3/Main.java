@@ -16,6 +16,7 @@ public class Main {
 		*/
 
 		//3-2
+		/*
 		Node n1 = new Node(1);
 		Node n2 = new Node(2);
 		Node n3 = new Node(3);
@@ -45,6 +46,59 @@ public class Main {
 
 		printSLL(reverser.reverseSLL(null));
 		printDLL(reverser.reverseDLL(null));
+		*/
+
+		// 3-20
+		/*
+		Node n1 = new Node(1);
+		Node n2 = new Node(2);
+		Node n3 = new Node(3);
+		Node n4 = new Node(4);
+		n1.setNext(n2);
+		n2.setNext(n3);
+		n3.setNext(n4);
+
+		Node nn1 = new Node(1);
+		Node nn2 = new Node(2);
+		Node nn3 = new Node(3);
+		Node nn4 = new Node(4);
+		Node nn5 = new Node(5);
+		nn1.setNext(nn2);
+		nn2.setNext(nn3);
+		nn3.setNext(nn4);
+		nn4.setNext(nn5);
+
+		MiddleNode mid = new MiddleNode();
+
+		System.out.println(mid.middleNode(n1));
+		System.out.println(mid.middleNode(nn1));
+		System.out.println(mid.middleNode(null));
+		*/
+
+		// 3-21
+		/*
+		TreeNode one4 = new TreeNode(2);
+		TreeNode one5 = new TreeNode(1);
+		TreeNode one2 = new TreeNode(4, one4, null);
+		TreeNode one3 = new TreeNode(3, one5, null);
+		TreeNode one1 = new TreeNode(5, one2, one3);
+
+		TreeNode two4 = new TreeNode(2);
+		TreeNode two5 = new TreeNode(1);
+		TreeNode two2 = new TreeNode(4, two4, null);
+		TreeNode two3 = new TreeNode(3, two5, new TreeNode(4));
+		TreeNode two1 = new TreeNode(5, two2, two3);
+
+		EqualTrees et = new EqualTrees();
+		System.out.println(et.equal(one1, two1));
+		*/
+
+		//3-22
+		TreeNode two2 = new TreeNode(8, new TreeNode(5), null);
+		TreeNode two3 = new TreeNode(15, new TreeNode(11), null);
+		TreeNode two1 = new TreeNode(10, two2, two3);
+		TreeToLinkedList treeToLL = new TreeToLinkedList();
+		printTLL(treeToLL.treeToLL(two1));
 
 	}
 
@@ -76,7 +130,18 @@ public class Main {
 		System.out.println();
 	}
 
-	private static void printDLLProper(NodeDouble head) {
-		NodeDouble curr
+	private static void printTLL(TreeNode head) {
+		if (head == null) {
+			System.out.println("Empty List");
+			return;
+		}
+		TreeNode curr = head;
+
+		while (curr != null) {
+			System.out.print(curr.getValue() + " ");
+			curr = curr.right();
+		}
+		System.out.println();
 	}
+
 }
